@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 // NOTA: Importacion apiServer que carga mi archivo local_movies.json
-import { apiServer } from '../apiServer'; 
+import { apiServer } from '../../apiServer'; 
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
