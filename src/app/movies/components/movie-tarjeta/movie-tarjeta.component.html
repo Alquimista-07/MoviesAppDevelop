@@ -1,5 +1,5 @@
 <mat-card>
-
+        
     <mat-card-header>
         <mat-card-title>
             {{ movie.title }}
@@ -9,10 +9,15 @@
     <img mat-card-image [src]="movie | imagen">
 
     <mat-card-content>
-        <h3>Information</h3>
-        <p>
-            <strong>Rating: </strong> {{ movie.rating }}
-        </p>
+        <h3>{{ "Information" }}</h3>
+        <div fxLayout="row">
+            <span class="material-icons" fxFlexAlign="center">
+                star_half
+            </span>
+            <strong fxFlexAlign="center">Rating: </strong>
+            <span fxFlexAlign="center">{{ movie.rating }}</span>
+        </div>
+        
     </mat-card-content>
 
     <mat-card-actions>
@@ -20,6 +25,7 @@
         <button mat-button 
                 color="warn"
                 [routerLink]="['/heroes', movie.movieId]">
+            <mat-icon>info</mat-icon>
             Watch Info...
         </button>
 
