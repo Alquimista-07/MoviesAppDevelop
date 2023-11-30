@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 // NOTA: Importacion apiServer que carga mi archivo local_movies.json
 import { apiServer } from '../../apiServer'; 
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Movie } from '../interfaces/movies.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,8 @@ export class MoviesService {
 
   constructor(private http: HttpClient) { }
 
-  getMovies(){
-    return this.http.get(`${this.ApiUrl}`);
+  getMovies(): Observable<Movie[]>{
+    const url = `${this.ApiUrl}`;
+    return this.http.get<Movie[]>( url );
   }
 }
