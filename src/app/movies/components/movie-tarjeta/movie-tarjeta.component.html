@@ -24,9 +24,16 @@
 
         <button mat-button 
                 color="warn"
-                [routerLink]="['/heroes', movie.movieId]">
+                [routerLink]="['/movies', movie.movieId]">
             <mat-icon>info</mat-icon>
             Watch Info...
+        </button>
+
+        <button mat-button 
+                color="info"
+                [routerLink]="['/movies/favorite', movie.movieId]">
+                Add Favorite
+                <mat-icon>favorite</mat-icon>
         </button>
 
     </mat-card-actions>
