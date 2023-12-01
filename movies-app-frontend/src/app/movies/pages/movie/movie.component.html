@@ -19,20 +19,56 @@
          </div>
 
          <div fxFlex="50">
-             <h1>{{"Information"}}</h1>
+             <h1 style="padding-top: 70px;">{{"Information"}}</h1>
              <mat-divider></mat-divider>
              <mat-list>
                  <strong>Description: </strong>
                  <p>
+                    <br>
                     {{ movie.description }}
                  </p>
              </mat-list>
+             <mat-list>
+                <div fxLayout="row">
+                    <span class="material-icons" fxFlexAlign="center">
+                        star_half
+                    </span>
+                    <strong fxFlexAlign="center">Rating: </strong>
+                    <span fxFlexAlign="center">{{ movie.rating }}</span>
+                </div>
+             </mat-list>
+             <mat-list>
+                <strong>Duration: </strong>
+                <p>
+                   {{ movie.duration }}
+                </p>
+            </mat-list>
+             <mat-list>
+                <strong>Release Date: </strong>
+                <p>
+                   {{ movie.releasedDate.day }}-{{ movie.releasedDate.month }}-{{ movie.releasedDate.year }}
+                </p>
+            </mat-list>
+            <mat-list>
+                <strong>Genres: </strong>
+                <span *ngFor="let genre of movie.genre" style="padding: 4px;">
+                    <button mat-raised-button>
+                        {{ genre }}
+                    </button>
+                </span>
+            </mat-list>
              <br>
              <button mat-button 
                      color="warn" 
                      (click)="volver()">
                  Regresar
              </button>
+             <br>
+             <br>
+
+             <h1>{{"Tráiler"}}</h1>
+             <mat-divider></mat-divider>
+             
          </div>
 
     </div>
