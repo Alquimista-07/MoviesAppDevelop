@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+// Importamos el forms module para habilitar el ng-model
+import { FormsModule } from '@angular/forms';
 
 // Importamos el flex-layout
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -17,6 +19,7 @@ import { MovieTarjetaComponent } from './components/movie-tarjeta/movie-tarjeta.
 
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { MovieComponent } from './pages/movie/movie.component';
+import { BuscarComponent } from './pages/buscar/buscar.component';
 
 
 @NgModule({
@@ -25,11 +28,13 @@ import { MovieComponent } from './pages/movie/movie.component';
     ListadoComponent,
     ImagenPipe,
     MovieTarjetaComponent,
-    MovieComponent
+    MovieComponent,
+    BuscarComponent
   ],
   imports: [
     CommonModule,
     FlexLayoutModule,
+    FormsModule,
     MaterialModule,
     MoviesRoutingModule
   ]

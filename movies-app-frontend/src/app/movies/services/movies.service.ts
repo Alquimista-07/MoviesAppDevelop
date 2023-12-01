@@ -24,4 +24,11 @@ export class MoviesService {
     console.log(url);
     return this.http.get<Movie>(url);
   }
+
+  getSugerencias(termino: string): Observable<Movie[]> {
+    const cantidadTerminos = 6;
+    const url = `${ this.baseUrl }/movies?q=${termino}&_limit=${cantidadTerminos}`;
+    return this.http.get<Movie[]>(url);
+  }
+
 }

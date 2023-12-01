@@ -1,0 +1,39 @@
+<div fxLayout="column">
+
+    <div>
+        <h1>Search Movies</h1>
+        <mat-divider></mat-divider>
+    </div>
+
+    <div fxLayout="column">
+        <h3>Buscador</h3>
+
+        <mat-form-field>
+            <input type="text"
+                   placeholder="Search Movies..."
+                   aria-label="Number"
+                   matInput
+                   [(ngModel)] = "termino"
+                   [matAutocomplete]="auto"
+                   (input)="buscando()">
+            <mat-autocomplete autoActiveFirstOption 
+                              #auto="matAutocomplete"
+                              (optionSelected)="opcionSeleccionada( $event )">
+                <mat-option *ngFor="let movie of movies" [value]="movie">
+                    {{ movie.title }}
+                </mat-option>
+
+                <!--No se encontró el término-->
+                <mat-option value="" *ngIf="movies.length === 0 && termino.length >= 2">
+                    No se encontró nada con el término {{ termino }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+    </div>
+
+</div>
+
+<div *ngIf="movieSeleccionada">
+    <app-movie-tarjeta fxFlex="30" [movie]="movieSeleccionada"></app-movie-tarjeta>
+</div>
