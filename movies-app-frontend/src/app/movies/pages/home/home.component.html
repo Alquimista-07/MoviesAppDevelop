@@ -5,11 +5,13 @@
     <mat-sidenav #sidenav mode="push">
         
         <!--Colocamos otro toolbar dentro del sidenav-->
+        <!--NOTA: También podemos cambiar el color de la barra agregando el color de la siguiente forma:-->
         <mat-toolbar color="primary">
             
             <span>Menú</span>
 
-            <!--Creamos una clase global usando el flex-layout para colocarla a un span que se va a encargar de empujar y aliner a la derecha el botón de menú-->
+            <!--Creamos una clase global usando el flex-layout para colocarla a un span que se va a encargar
+            de empujar y aliner a la derecha el botón de menú-->
             <span class="spacer"></span>
 
             <button mat-icon-button 
@@ -18,16 +20,17 @@
             </button>
 
         </mat-toolbar>
-
-        <!--Agregamos la lista de las opciones disponibles en el menú lateral-->
+        <!--Agregamos la lista de las opciones disponibles en el menú-->
         <mat-nav-list>
             
-            <!--Le agregamos el evento click sidenav.toggle() para que cuando le demos click el sidenav se cierre-->
+            <!--Le agregamos el evento click sidenav.toggle() para que cuando le demos click el sidenav se cierre
+                y también le colocamos un icono y le agregamos la propiedad mat-list-icon para indicar que es un icono
+                de nuestra lista y no quede pegado y se vea feo-->
             <a routerLink="./list"
                mat-list-item
                (click)="sidenav.toggle()">
-               <mat-icon mat-list-icon>movie</mat-icon>
-                <span>List Of Movies</span>
+               <mat-icon mat-list-icon>person</mat-icon>
+                <span>Movies List</span>
             </a>
 
             <a routerLink="./favorites"
@@ -41,7 +44,7 @@
                mat-list-item
                (click)="sidenav.toggle()">
                <mat-icon mat-list-icon>search</mat-icon>
-               <span>Search Movie</span>
+               <span>Search Movies</span>
             </a>
 
         </mat-nav-list>
@@ -56,15 +59,17 @@
             <mat-icon>menu</mat-icon>
         </button>
 
-        <!--Creamos una clase global usando el flex-layout para colocarla a un span que se va a encargar de empujar y aliner a la derecha el botón de logout-->
+        <!--Creamos una clase global usando el flex-layout para colocarla a un span que se va a encargar
+            de empujar y aliner a la derecha el botón de logout-->
         <span class="spacer"></span>
 
-        <span>{{ "Pepito Prueba" }}</span>
+        <span>{{ auth.usuario }}</span>
 
         <!--Cremos el botón para el cierre de sesión-->
-        <button mat-button>
+        <button mat-button
+                (click)="logout()">
             <mat-icon></mat-icon>
-            Login
+            Logout
         </button>
 
     </mat-toolbar>

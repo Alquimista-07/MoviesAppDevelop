@@ -4,7 +4,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { MovieComponent } from './pages/movie/movie.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
-import { FavoritesComponent } from './pages/favorites/favorites.component';
 
 // NOTa: Módulo para manejo de rutas hijas
 const routes: Routes = [
@@ -15,10 +14,6 @@ const routes: Routes = [
       {
         path: 'search',
         component: BuscarComponent
-      },
-      {
-        path: 'favorites',
-        component: FavoritesComponent
       },
       {
         path: 'list',
