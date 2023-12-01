@@ -21,7 +21,6 @@ export class MoviesService {
 
   getMovieById( id: string ): Observable<Movie> {
     const url = `${this.baseUrl}/movies/${id}`;
-    console.log(url);
     return this.http.get<Movie>(url);
   }
 

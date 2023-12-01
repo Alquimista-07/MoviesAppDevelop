@@ -24,4 +24,8 @@ export class HomeComponent {
     this.router.navigate(['/movies']);
   }
 
+  login(){
+    this.router.navigateByUrl('/auth/login');
+  }
+
 }

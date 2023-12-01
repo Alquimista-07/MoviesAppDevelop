@@ -66,7 +66,12 @@
         <span>{{ auth.usuario }}</span>
 
         <!--Cremos el botón para el cierre de sesión-->
-        <button mat-button
+        <button *ngIf="auth.usuario == null" mat-button
+                (click)="login()">
+            <mat-icon></mat-icon>
+            Login
+        </button>
+        <button *ngIf="auth.usuario != null" mat-button
                 (click)="logout()">
             <mat-icon></mat-icon>
             Logout
