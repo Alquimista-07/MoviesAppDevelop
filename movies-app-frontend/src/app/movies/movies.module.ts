@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 // Importamos el forms module para habilitar el ng-model
 import { FormsModule } from '@angular/forms';
 
+// Modulo Youtube Player
+import { YouTubePlayerModule } from '@angular/youtube-player';
+
 // Importamos el flex-layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -20,6 +23,7 @@ import { MovieTarjetaComponent } from './components/movie-tarjeta/movie-tarjeta.
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { MovieComponent } from './pages/movie/movie.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
+import { YoutubePlayerComponent } from './components/youtube-player/youtube-player.component';
 
 
 @NgModule({
@@ -29,14 +33,16 @@ import { BuscarComponent } from './pages/buscar/buscar.component';
     ImagenPipe,
     MovieTarjetaComponent,
     MovieComponent,
-    BuscarComponent
+    BuscarComponent,
+    YoutubePlayerComponent
   ],
   imports: [
     CommonModule,
     FlexLayoutModule,
     FormsModule,
     MaterialModule,
-    MoviesRoutingModule
+    MoviesRoutingModule,
+    YouTubePlayerModule
   ]
 })
 export class MoviesModule { }
