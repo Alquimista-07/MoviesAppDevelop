@@ -106,11 +106,5 @@
             "trailerLink": "https://www.youtube.com/watch?v=tmeOjFno6Do",
             "imageUrl": "../../assets/images/avengers.png"
         }
-    ],
-    "favorites": [
-        {
-          "movieId": "avengers",
-          "userId": 1
-        }
-      ]
+    ]
   }
