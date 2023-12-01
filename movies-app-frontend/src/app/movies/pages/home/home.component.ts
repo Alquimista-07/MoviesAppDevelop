@@ -21,7 +21,7 @@ export class HomeComponent {
 
   logout(){
     this.authService.logout();
-    this.router.navigate(['/movies']);
+    this.router.navigateByUrl('/auth/login');
   }
 
   login(){
