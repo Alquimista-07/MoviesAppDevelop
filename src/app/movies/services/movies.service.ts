@@ -20,4 +20,10 @@ export class MoviesService {
     const url = `${this.ApiUrl}`;
     return this.http.get<Movie[]>( url );
   }
+
+  getMovieById( id: string ): Observable<Movie> {
+    const url = `${this.ApiUrl}/movies/${id}`;
+    console.log(url);
+    return this.http.get<Movie>(url);
+  }
 }

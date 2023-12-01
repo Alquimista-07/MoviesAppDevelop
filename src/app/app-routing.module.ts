@@ -5,7 +5,7 @@ const routes: Routes = [
 
   // NOTA: Rutas películas - LazyLoad
   {
-    path: '',
+    path: 'movies',
     loadChildren: () => import('./movies/movies.module').then( m => m.MoviesModule)
   }
 

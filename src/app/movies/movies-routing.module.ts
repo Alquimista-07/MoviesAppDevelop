@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
+import { MovieComponent } from './pages/movie/movie.component';
 
 // NOTa: Módulo para manejo de rutas hijas
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
       {
         path: 'listado',
         component: ListadoComponent
+      },
+      {
+        path: ':id',
+        component: MovieComponent
       },
       // NOTA: Cualquier otra ruta
       {

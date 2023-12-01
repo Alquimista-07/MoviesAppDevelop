@@ -1,0 +1,36 @@
+<!--Creamos el grid y le pasamos el número de columnas que es obligatorio-->
+<mat-grid-list cols="1" *ngIf="!movie; else divMovie">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divMovie>
+    <div fxLayout="row"
+         fxLayout.xs="column"
+         fxLayoutGap="30px">
+
+         <!--Definimos el 50%-->
+         <div fxFlex="50">
+            <h1>{{ movie.title }}</h1>
+            <mat-divider></mat-divider>
+            <br>
+            <!-- <img [src]="movie | imagen"> -->
+         </div>
+
+         <div fxFlex="50">
+             <h1>{{"Information"}}</h1>
+             <mat-divider></mat-divider>
+             <mat-list>
+                 <mat-list-item>{{ movie.description }}</mat-list-item>
+             </mat-list>
+             <br>
+             <button mat-button 
+                     color="warn" 
+                     (click)="volver()">
+                 Regresar
+             </button>
+         </div>
+
+    </div>
+</ng-template>

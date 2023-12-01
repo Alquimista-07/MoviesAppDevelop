@@ -16,6 +16,7 @@ import { ListadoComponent } from './pages/listado/listado.component';
 import { MovieTarjetaComponent } from './components/movie-tarjeta/movie-tarjeta.component';
 
 import { ImagenPipe } from './pipes/imagen.pipe';
+import { MovieComponent } from './pages/movie/movie.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     HomeComponent,
     ListadoComponent,
     ImagenPipe,
-    MovieTarjetaComponent
+    MovieTarjetaComponent,
+    MovieComponent
   ],
   imports: [
     CommonModule,
