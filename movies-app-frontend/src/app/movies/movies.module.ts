@@ -20,6 +20,7 @@ import { MovieTarjetaComponent } from './components/movie-tarjeta/movie-tarjeta.
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { MovieComponent } from './pages/movie/movie.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { BuscarComponent } from './pages/buscar/buscar.component';
     ImagenPipe,
     MovieTarjetaComponent,
     MovieComponent,
-    BuscarComponent
+    BuscarComponent,
+    FavoritesComponent
   ],
   imports: [
     CommonModule,
