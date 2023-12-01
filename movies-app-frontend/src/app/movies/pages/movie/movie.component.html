@@ -15,14 +15,17 @@
             <h1>{{ movie.title }}</h1>
             <mat-divider></mat-divider>
             <br>
-            <!-- <img [src]="movie | imagen"> -->
+            <img [src]="movie | imagen">
          </div>
 
          <div fxFlex="50">
              <h1>{{"Information"}}</h1>
              <mat-divider></mat-divider>
              <mat-list>
-                 <mat-list-item>{{ movie.description }}</mat-list-item>
+                 <strong>Description: </strong>
+                 <p>
+                    {{ movie.description }}
+                 </p>
              </mat-list>
              <br>
              <button mat-button 

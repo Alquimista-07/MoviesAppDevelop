@@ -24,14 +24,14 @@
 
         <button mat-button 
                 color="warn"
-                [routerLink]="['/movies', movie.movieId]">
+                [routerLink]="['/movies', movie.id]">
             <mat-icon>info</mat-icon>
             Watch Info...
         </button>
 
         <button mat-button 
                 color="info"
-                [routerLink]="['/movies/favorite', movie.movieId]">
+                [routerLink]="['/movies/favorite', movie.id]">
                 Add Favorite
                 <mat-icon>favorite</mat-icon>
         </button>

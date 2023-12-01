@@ -1,28 +1,26 @@
 import { Injectable } from '@angular/core';
-
-// NOTA: Importacion apiServer que carga mi archivo local_movies.json
-import { apiServer } from '../../apiServer'; 
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
 import { Movie } from '../interfaces/movies.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MoviesService {
 
-  // Traer data desde apiServer
-  private ApiUrl: string = apiServer.serverUrl;
+  private baseUrl: string = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
   getMovies(): Observable<Movie[]>{
-    const url = `${this.ApiUrl}`;
+    const url = `${this.baseUrl}/movies`;
     return this.http.get<Movie[]>( url );
   }
 
   getMovieById( id: string ): Observable<Movie> {
-    const url = `${this.ApiUrl}/movies/${id}`;
+    const url = `${this.baseUrl}/movies/${id}`;
     console.log(url);
     return this.http.get<Movie>(url);
   }

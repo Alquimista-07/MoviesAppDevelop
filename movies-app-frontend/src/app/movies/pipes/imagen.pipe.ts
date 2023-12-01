@@ -11,14 +11,14 @@ export class ImagenPipe implements PipeTransform {
 
     // Entonces vamos a mejorar el pipe de imagen ya que como no tenemos una imagen asociada nos aparece
     // que la imágen esta rota
-    if( !movie.movieId && !movie.imageUrl ) {
+    if( !movie.id && !movie.imageUrl ) {
       return `assets/no-image.png`;
     }
     else if( movie.imageUrl ) {
       return movie.imageUrl;
     }
     else {
-      return `assets/images/${ movie.movieId }.png`;
+      return `assets/images/${ movie.id }.png`;
     }
 
   }
