@@ -31,7 +31,7 @@ export class MovieComponent implements OnInit {
   }
 
   volver() {
-    this.router.navigate(['/movies/listado']);
+    this.router.navigate(['/movies/list']);
   }
 
 }
