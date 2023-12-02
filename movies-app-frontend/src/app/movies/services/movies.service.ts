@@ -21,7 +21,6 @@ export class MoviesService {
 
   constructor(private http: HttpClient) {
     if(localStorage.getItem( 'user' )){
-      console.log('Entro user');
       this._user = JSON.parse( localStorage.getItem('user')! );
     }
   }
