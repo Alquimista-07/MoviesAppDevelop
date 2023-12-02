@@ -31,8 +31,6 @@ export class MoviesService {
 
     if(localStorage.getItem('favorites')){
       this._favorites = JSON.parse(localStorage.getItem('favorites')!)
-    } else {
-      localStorage.setItem('favorites', JSON.stringify(this._favorites));
     }
   }
 
