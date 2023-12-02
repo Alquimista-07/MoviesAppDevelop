@@ -31,7 +31,7 @@
 
         <button mat-button 
                 color="info"
-                [routerLink]="['/movies/favorite', movie.id]">
+                (click)="addFavorite(movie)">
                 Add Favorite
                 <mat-icon>favorite</mat-icon>
         </button>

@@ -13,15 +13,26 @@ export class MoviesService {
 
   private baseUrl: string = environment.baseUrl;
   private _user: User | undefined;
-  private _favorites: string[] = [];
+  private _favorites: Movie[] = [];
 
   get user(): User{
     return {...this._user!};
   }
 
+  get favorites() {
+    return {...this._favorites};
+  }
+
   constructor(private http: HttpClient) {
+
     if(localStorage.getItem( 'user' )){
       this._user = JSON.parse( localStorage.getItem('user')! );
+    }
+
+    if(localStorage.getItem('favorites')){
+      this._favorites = JSON.parse(localStorage.getItem('favorites')!)
+    } else {
+      localStorage.setItem('favorites', JSON.stringify(this._favorites));
     }
   }
 
@@ -39,6 +50,16 @@ export class MoviesService {
     const cantidadTerminos = 6;
     const url = `${ this.baseUrl }/movies?q=${termino}&_limit=${cantidadTerminos}`;
     return this.http.get<Movie[]>(url);
+  }
+
+  addFavorite(movie: Movie){
+      if( !this._favorites.includes(movie)){
+        console.log(this._favorites.includes(movie));
+        // Insertamos
+        this._favorites.unshift(movie);
+        localStorage.setItem('favorites', JSON.stringify(this._favorites));
+      }
+
   }
 
 }

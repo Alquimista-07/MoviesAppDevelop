@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Movie } from '../../interfaces/movies.interface';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-movie-tarjeta',
@@ -13,5 +14,11 @@ import { Movie } from '../../interfaces/movies.interface';
 export class MovieTarjetaComponent {
 
   @Input() movie!: Movie;
+
+  constructor(private moviesService: MoviesService){ }
+
+  addFavorite(movie: Movie){
+    this.moviesService.addFavorite(movie);
+  }
 
 }
