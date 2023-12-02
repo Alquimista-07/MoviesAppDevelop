@@ -2,18 +2,20 @@
 <mat-divider></mat-divider>
 <br>
 
-<!--Agregamos una propiedad de flex-layout para colocar en filas y adicionalmente agregamos la propiedad wrap para que cuando ya no quepa en el contenedor salte automaticamente a la siguiente línea-->
-<div fxLayout="row wrap"
-     fxLayout.xs="column"
-     fxLayoytAlign="center"
-     fxLayoutGap="20px">
+<div class="container" style="padding-left: 10%;">
+     <!--Agregamos una propiedad de flex-layout para colocar en filas y adicionalmente agregamos la propiedad wrap para que cuando ya no quepa en el contenedor salte automaticamente a la siguiente línea-->
+     <div fxLayout="row wrap"
+          fxLayout.xs="column"
+          fxLayoytAlign="center"
+          fxLayoutGap="20px">
 
-    <!--Ahora indico que tan grandes quiero que sean las tarjetas en porcentaje-->
-    <div fxFlex="20"
-         fxFlex.lg="20"
-         fxFlex.sm="45"
-         *ngFor="let favorite of favorites">
+     <!--Ahora indico que tan grandes quiero que sean las tarjetas en porcentaje-->
+     <div fxFlex="20"
+          fxFlex.lg="20"
+          fxFlex.sm="45"
+          *ngFor="let favorite of favorites">
 
-        <app-movie-tarjeta [movie]="favorite"></app-movie-tarjeta>
+          <app-movie-tarjeta [movie]="favorite"></app-movie-tarjeta>
 
+     </div>
 </div>
