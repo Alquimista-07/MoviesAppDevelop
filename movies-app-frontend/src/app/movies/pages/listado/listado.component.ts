@@ -27,7 +27,7 @@ export class ListadoComponent {
         this.ordenarTitulo();
         break;
       
-      case 'releasedDate':
+      case 'released Date':
         this.ordenarFecha();
         break;
     
