@@ -24,6 +24,7 @@ import { ImagenPipe } from './pipes/imagen.pipe';
 import { MovieComponent } from './pages/movie/movie.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { YoutubePlayerComponent } from './components/youtube-player/youtube-player.component';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { YoutubePlayerComponent } from './components/youtube-player/youtube-play
     MovieTarjetaComponent,
     MovieComponent,
     BuscarComponent,
-    YoutubePlayerComponent
+    YoutubePlayerComponent,
+    FavoritesComponent
   ],
   imports: [
     CommonModule,
