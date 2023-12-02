@@ -6,7 +6,7 @@
     </div>
 
     <div fxLayout="column">
-        <h3>Buscador</h3>
+        <h3>Searcher</h3>
 
         <mat-form-field>
             <input type="text"
@@ -25,7 +25,7 @@
 
                 <!--No se encontró el término-->
                 <mat-option value="" *ngIf="movies.length === 0 && termino.length >= 2">
-                    No se encontró nada con el término {{ termino }}
+                    Nothing was found with the term {{ termino }}
                 </mat-option>
             </mat-autocomplete>
         </mat-form-field>
