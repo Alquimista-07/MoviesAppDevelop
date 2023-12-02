@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Movie } from '../../interfaces/movies.interface';
 import { MoviesService } from '../../services/movies.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-movie-tarjeta',
@@ -19,6 +20,11 @@ export class MovieTarjetaComponent {
 
   addFavorite(movie: Movie){
     this.moviesService.addFavorite(movie);
+    Swal.fire({
+      title: "Well done",
+      text: "The movie has been added to your favorites list.",
+      icon: "success"
+    });
   }
 
 }

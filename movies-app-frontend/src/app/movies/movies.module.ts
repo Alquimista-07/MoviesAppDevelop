@@ -9,6 +9,9 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 // Importamos el flex-layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+// SWal2
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 // Importamos el modulo especializado de los componentes de Angular Material
 import { MaterialModule } from '../material/material.module';
 
@@ -44,7 +47,8 @@ import { FavoritesComponent } from './pages/favorites/favorites.component';
     FormsModule,
     MaterialModule,
     MoviesRoutingModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    SweetAlert2Module
   ]
 })
 export class MoviesModule { }
