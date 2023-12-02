@@ -63,15 +63,15 @@
             de empujar y aliner a la derecha el botón de logout-->
         <span class="spacer"></span>
 
-        <span>{{ auth.usuario }}</span>
+        <span>{{ user.usuario }}</span>
 
         <!--Cremos el botón para el cierre de sesión-->
-        <button *ngIf="auth.usuario == null" mat-button
+        <button *ngIf="user.usuario == null" mat-button
                 (click)="login()">
             <mat-icon></mat-icon>
             Login
         </button>
-        <button *ngIf="auth.usuario != null" mat-button
+        <button *ngIf="user.usuario != null" mat-button
                 (click)="logout()">
             <mat-icon></mat-icon>
             Logout

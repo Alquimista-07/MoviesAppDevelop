@@ -11,6 +11,7 @@ export class AuthService {
 
   private baseUrl: string = environment.baseUrl;
   private _auth: Auth | undefined;
+  private user: string[] = [];
 
   get auth(): Auth {
     return { ...this._auth! };
@@ -41,13 +42,17 @@ export class AuthService {
     return this.http.get<Auth>( url )
                .pipe(
                  tap( auth => this._auth = auth ),
-                 tap( auth => localStorage.setItem( 'token', auth.id ) )
+                 tap( auth => {
+                  localStorage.setItem( 'token', auth.id )
+                  localStorage.setItem('user', JSON.stringify( auth ))
+                 })
                );
   }
 
   logout() {
     this._auth = undefined
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
   }
 
 }
