@@ -22,8 +22,6 @@ export class ListadoComponent {
 
   ordenar(selected: string){
 
-    console.log(this.movies);
-
     switch (selected) {
       case 'title':
         this.ordenarTitulo();
@@ -51,9 +49,10 @@ export class ListadoComponent {
 
   ordenarFecha(){
     this.movies.sort(function( a, b ) {
-      if(a.releasedDate.year < b.releasedDate.year)
+
+      if(JSON.stringify(new Date(a.releasedDate.year + "-" + a.releasedDate.month + "-" + a.releasedDate.day)) < JSON.stringify(new Date(b.releasedDate.year + "-" + b.releasedDate.month + "-" + b.releasedDate.day)))
         return -1;
-      else if (a.releasedDate.year > b.releasedDate.year)
+      else if (JSON.stringify(new Date(a.releasedDate.year + "-" + a.releasedDate.month + "-" + a.releasedDate.day)) > JSON.stringify(new Date(b.releasedDate.year + "-" + b.releasedDate.month + "-" + b.releasedDate.day)))
         return 1;
       else
         return 0;
