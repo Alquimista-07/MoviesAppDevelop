@@ -20,13 +20,13 @@ import { MoviesRoutingModule } from './movies-routing.module';
 
 // Componentes
 import { HomeComponent } from './pages/home/home.component';
-import { ListadoComponent } from './pages/listado/listado.component';
-import { MovieTarjetaComponent } from './components/movie-tarjeta/movie-tarjeta.component';
+import { ListadoComponent } from '../shared/pages/listado/listado.component';
+import { MovieTarjetaComponent } from '../shared/components/movie-tarjeta/movie-tarjeta.component';
 
-import { ImagenPipe } from './pipes/imagen.pipe';
-import { MovieComponent } from './pages/movie/movie.component';
-import { BuscarComponent } from './pages/buscar/buscar.component';
-import { YoutubePlayerComponent } from './components/youtube-player/youtube-player.component';
+import { ImagenPipe } from '../shared/pipes/imagen.pipe';
+import { MovieComponent } from '../shared/pages/movie/movie.component';
+import { BuscarComponent } from '../shared/pages/buscar/buscar.component';
+import { YoutubePlayerComponent } from '../shared/components/youtube-player/youtube-player.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 
 

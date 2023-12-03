@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanLoad } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { ListadoComponent } from './pages/listado/listado.component';
-import { MovieComponent } from './pages/movie/movie.component';
-import { BuscarComponent } from './pages/buscar/buscar.component';
+import { ListadoComponent } from '../shared/pages/listado/listado.component';
+import { MovieComponent } from '../shared/pages/movie/movie.component';
+import { BuscarComponent } from '../shared/pages/buscar/buscar.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { AuthGuard } from '../auth/guards/auth.guard';
 

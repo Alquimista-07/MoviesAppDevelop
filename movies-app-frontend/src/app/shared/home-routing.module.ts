@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './pages/home/home.component';
-import { ListadoComponent } from '../movies/pages/listado/listado.component';
-import { BuscarComponent } from '../movies/pages/buscar/buscar.component';
+import { ListadoComponent } from './pages/listado/listado.component';
+import { BuscarComponent } from './pages/buscar/buscar.component';
+import { MovieComponent } from './pages/movie/movie.component';
 
 const routes: Routes = [
 
@@ -18,6 +19,14 @@ const routes: Routes = [
       {
         path: 'search',
         component: BuscarComponent
+      },
+      {
+        path: 'list',
+        component: ListadoComponent
+      },
+      {
+        path: ':id',
+        component: MovieComponent
       },
       {
         path: '**',

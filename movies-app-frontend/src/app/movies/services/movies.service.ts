@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { Movie } from '../interfaces/movies.interface';
+import { Movie } from '../../shared/interfaces/movies.interface';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

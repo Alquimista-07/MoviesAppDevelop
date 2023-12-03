@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Movie } from '../../interfaces/movies.interface';
-import { MoviesService } from '../../services/movies.service';
+import { MoviesService } from '../../../movies/services/movies.service';
 import Swal from 'sweetalert2';
 
 @Component({

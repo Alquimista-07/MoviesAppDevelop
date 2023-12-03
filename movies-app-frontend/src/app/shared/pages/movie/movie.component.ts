@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Movie } from '../../interfaces/movies.interface';
-import { MoviesService } from '../../services/movies.service';
+import { MoviesService } from '../../../movies/services/movies.service';
 
 @Component({
   selector: 'app-movie',

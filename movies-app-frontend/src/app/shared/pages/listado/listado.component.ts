@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Movie } from '../../interfaces/movies.interface';
-import { MoviesService } from '../../services/movies.service';
+import { MoviesService } from '../../../movies/services/movies.service';
 
 @Component({
   selector: 'app-listado',
