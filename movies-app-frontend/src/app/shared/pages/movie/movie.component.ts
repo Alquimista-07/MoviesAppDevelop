@@ -30,7 +30,12 @@ export class MovieComponent implements OnInit {
   }
 
   volver() {
-    this.router.navigate(['/movies/list']);
+    if(sessionStorage.getItem('user')){
+      this.router.navigate(['/movies/list']);
+    }
+    else{
+      this.router.navigate(['/home/list']);
+    }
   }
 
 }
