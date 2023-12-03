@@ -33,13 +33,6 @@
                 <span>Movies List</span>
             </a>
 
-            <a routerLink="./favorites"
-               mat-list-item
-               (click)="sidenav.toggle()">
-               <mat-icon mat-list-icon>favorite</mat-icon>
-               <span>Favorites</span>
-            </a>
-
             <a routerLink="./search"
                mat-list-item
                (click)="sidenav.toggle()">
@@ -63,18 +56,11 @@
             de empujar y aliner a la derecha el botón de logout-->
         <span class="spacer"></span>
 
-        <span>{{ auth.usuario }}</span>
-
         <!--Cremos el botón para el cierre de sesión-->
-        <button *ngIf="auth.usuario == null" mat-button
-                (click)="login()">
+        <button mat-button
+            (click)="login()">
             <mat-icon></mat-icon>
             Login
-        </button>
-        <button *ngIf="auth.usuario != null" mat-button
-                (click)="logout()">
-            <mat-icon></mat-icon>
-            Logout
         </button>
 
     </mat-toolbar>

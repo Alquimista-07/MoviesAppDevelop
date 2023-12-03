@@ -23,9 +23,7 @@ const routes: Routes = [
       },
       {
         path: 'favorites',
-        component: FavoritesComponent,
-        canLoad: [ AuthGuard ],
-        canActivate: [ AuthGuard ],
+        component: FavoritesComponent
       },
       {
         path: ':id',

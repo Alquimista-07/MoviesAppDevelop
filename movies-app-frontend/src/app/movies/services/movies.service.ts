@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 
 import { Movie } from '../interfaces/movies.interface';
 import { environment } from 'src/environments/environment';
-import { User } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,22 +11,14 @@ import { User } from '../interfaces/user.interface';
 export class MoviesService {
 
   private baseUrl: string = environment.baseUrl;
-  private _user: User | undefined;
   private _favorites: Movie[] = [];
 
-  get user(): User{
-    return {...this._user!};
-  }
 
   get favorites() {
     return {...this._favorites};
   }
 
   constructor(private http: HttpClient) {
-
-    if(localStorage.getItem( 'user' )){
-      this._user = JSON.parse( localStorage.getItem('user')! );
-    }
 
     if(localStorage.getItem('favorites')){
       this._favorites = JSON.parse(localStorage.getItem('favorites')!)

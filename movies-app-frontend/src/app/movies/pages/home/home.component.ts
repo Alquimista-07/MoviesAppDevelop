@@ -16,17 +16,17 @@ export class HomeComponent {
 
   constructor( private router: Router, private authService: AuthService, private moviesService: MoviesService ){}
 
-  get user(){
-    return this.moviesService.user;
+  get auth() {
+    return this.authService.auth;
   }
 
   logout(){
     this.authService.logout();
-    this.router.navigateByUrl('/auth/login');
+    this.router.navigateByUrl('/home/list');
   }
 
   login(){
-    this.router.navigateByUrl('/auth/login');
+    this.router.navigateByUrl('/home/login');
   }
 
 }
