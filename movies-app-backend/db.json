@@ -3,12 +3,7 @@
         {
           "id": 1,
           "usuario": "John Doe",
-          "email": "john.due@gmail.com"
-        },
-        {
-          "id": 2,
-          "usuario": "Fredy Mercury",
-          "email": "freddy.mercury@gmail.com"
+          "email": "john.doe@gmail.com"
         }
       ],
     "movies": [
