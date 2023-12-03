@@ -11,7 +11,7 @@ export class FavoritesComponent {
   // Propiedad para las películas
   favorites: Movie[] = [];
 
-  constructor( private moviesService: MoviesService ) {
+  constructor( ) {
     if(localStorage.getItem('favorites')){
       this.favorites = JSON.parse( localStorage.getItem( 'favorites' )! );
     }

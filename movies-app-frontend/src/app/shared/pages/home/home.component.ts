@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 export class HomeComponent {
 
   constructor( private router: Router, private authService: AuthService ){
-    if(authService.user != undefined){
+    if(this.authService.user != undefined){
       this.router.navigateByUrl('movies/list');
     }
   }

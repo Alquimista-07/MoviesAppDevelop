@@ -5,7 +5,6 @@ import { ListadoComponent } from '../shared/pages/listado/listado.component';
 import { MovieComponent } from '../shared/pages/movie/movie.component';
 import { BuscarComponent } from '../shared/pages/buscar/buscar.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
-import { AuthGuard } from '../auth/guards/auth.guard';
 
 // NOTa: Módulo para manejo de rutas hijas
 const routes: Routes = [
