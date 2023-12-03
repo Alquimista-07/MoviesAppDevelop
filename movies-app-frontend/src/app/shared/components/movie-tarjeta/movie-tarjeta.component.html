@@ -24,12 +24,13 @@
 
         <button mat-button 
                 color="warn"
-                [routerLink]="['/movies', movie.id]">
+                [routerLink]="[(auth.usuario != null ? '/movies' : '/home'), movie.id]">
             <mat-icon>info</mat-icon>
             Watch Info...
         </button>
 
-        <button mat-button 
+        <button *ngIf="auth.usuario != null"
+                mat-button 
                 color="info"
                 (click)="addFavorite(movie)">
                 Add Favorite
