@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Auth } from '../interfaces/auth.interface';
 import { tap, Observable, of, map } from 'rxjs';
+import { User } from 'src/app/movies/interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,14 @@ export class AuthService {
 
   private baseUrl: string = environment.baseUrl;
   private _auth: Auth | undefined;
-  private user: string[] = [];
+  private _user: User | undefined;
 
   get auth(): Auth {
     return { ...this._auth! };
+  }
+
+  get user(): User {
+    return JSON.parse(sessionStorage.getItem('user')!);
   }
 
   constructor( private http: HttpClient ) { }
