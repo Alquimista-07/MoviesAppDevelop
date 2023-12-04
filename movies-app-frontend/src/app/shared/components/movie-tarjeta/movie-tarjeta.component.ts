@@ -48,6 +48,8 @@ export class MovieTarjetaComponent {
       localStorage.setItem("favorites",JSON.stringify(resultado));
     }
 
+    this.router.navigateByUrl('movies/list');
+
   }
 
 }
