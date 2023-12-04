@@ -43,7 +43,6 @@ export class MoviesService {
 
   addFavorite(movie: Movie){
       if( !this._favorites.includes(movie)){
-        console.log(this._favorites.includes(movie));
         // Insertamos
         this._favorites.unshift(movie);
         localStorage.setItem('favorites', JSON.stringify(this._favorites));
