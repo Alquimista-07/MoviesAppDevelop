@@ -8,7 +8,7 @@ import { MoviesService } from '../../services/movies.service';
 })
 export class FavoritesComponent {
 
-  // Propiedad para las películas
+  // Propiedad para las películas favoritas
   favorites: Movie[] = [];
 
   constructor( ) {

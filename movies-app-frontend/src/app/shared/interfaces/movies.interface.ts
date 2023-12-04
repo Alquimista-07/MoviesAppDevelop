@@ -8,6 +8,7 @@ export interface Movie {
     releasedDate: ReleasedDate;
     trailerLink:  string;
     imageUrl?:    string;
+    isFavorite:   boolean;
 }
 
 export interface ReleasedDate {
