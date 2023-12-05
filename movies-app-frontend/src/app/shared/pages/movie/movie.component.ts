@@ -52,12 +52,12 @@ export class MovieComponent implements OnInit {
 
   addFavorite(movieId: string){
     this.moviesService.addFavorite(movieId, this.authService.auth.id);
-    this.router.navigateByUrl('/movies/favorites');
+    this.router.navigateByUrl('/movies/list');
   }
 
   removeFavorite(idFavorite: string, userId: string){
     this.moviesService.removeFavorite(idFavorite, userId);
-    this.router.navigateByUrl('/movies/list');
+    this.router.navigateByUrl('/movies/favorites');
   }
 
   validaFavorito(idFavorito: string){
