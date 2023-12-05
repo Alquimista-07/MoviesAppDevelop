@@ -2,11 +2,15 @@
 <mat-divider></mat-divider>
 <br>
 
-<mat-grid-list cols="1" *ngIf="noFavorites; else divMovie">
-     <mat-grid-tile>
-         <h1>You don't have favorites added to your list yet.</h1>
-     </mat-grid-tile>
- </mat-grid-list>
+<div class="container" style="padding-left: 10%;" *ngIf="noFavorites; else divMovie">
+     <!--Agregamos una propiedad de flex-layout para colocar en filas y adicionalmente agregamos la propiedad wrap para que cuando ya no quepa en el contenedor salte automaticamente a la siguiente línea-->
+     <div fxLayout="row wrap"
+          fxLayout.xs="column"
+          fxLayoytAlign="center"
+          fxLayoutGap="20px">
+          <h1>You don't have favorites added to your list yet.</h1>
+     </div>
+</div>
 
  <ng-template #divMovie>
 
