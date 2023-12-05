@@ -111,4 +111,12 @@ export class MoviesService {
     return this._favoritesLocal.includes(idFavorito);
   }
 
+  noHayFavorito(): boolean{
+    let val = JSON.parse(localStorage.getItem(`favorites_${this.authService.auth.id}`)!);
+    if(Object.keys(val).length === 0){
+      return true;
+    }
+    return false;
+  }
+
 }

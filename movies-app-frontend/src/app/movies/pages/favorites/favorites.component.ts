@@ -10,16 +10,20 @@ import { Movie } from 'src/app/shared/interfaces/movies.interface';
 })
 export class FavoritesComponent {
 
-  // Propiedad para las películas favoritas
-  // favorites: Movie[] = [];
+  noFavorites!: boolean;
 
   constructor( private moviesService: MoviesService, private authService: AuthService ) {
      this.moviesService.loadFavorites(this.authService.auth.id); 
+     this.validaFavoritos();
   }
 
   get favorites(){
     return this.moviesService.favorites;
   }
   
+  validaFavoritos(){
+    this.noFavorites = this.moviesService.noHayFavorito();
+    console.log(this.noFavorites);
+  }
 
 }
