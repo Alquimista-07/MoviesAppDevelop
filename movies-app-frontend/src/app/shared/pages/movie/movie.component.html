@@ -15,7 +15,14 @@
             <h1>{{ movie.title }}</h1>
             <mat-divider></mat-divider>
             <br>
-            <img [src]="movie | imagen">
+                <article class="TagFavorite">
+                  <a>
+                    <span *ngIf="isFavorite" class="Favorite"><span>Favorite</span></span>
+                    <div class="Image">
+                        <img [src]="movie | imagen"/>
+                    </div>
+                  </a>
+                </article>
          </div>
 
          <div fxFlex="50">

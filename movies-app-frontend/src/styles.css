@@ -9,3 +9,93 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .spacer {
     flex: 1 1 auto;
 }
+
+.Favorite {
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    overflow: hidden;
+    width: 70px;
+    height: 70px;
+    z-index: 3
+}
+
+.Favorite span {
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    left: -25px;
+    top: 10px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    width: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #01ae43;
+    z-index: 2;
+    line-height: 25px
+}
+
+.Favorite:before,
+.Favorite:after {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    content: '';
+    z-index: 1
+}
+
+.Favorite:before {
+    left: 0;
+    bottom: 5px;
+    background-color: #007a2d;
+    height: 7px
+}
+
+.Favorite:after {
+    right: 5px;
+    top: 0;
+    background-color: #007a2d;
+    width: 7px
+}
+
+.TagFavorite {
+    position: relative
+}
+
+.TagFavorite:before
+{
+    position: absolute;
+    z-index: 1;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .05)
+}
+
+.TagFavorite>* {
+    position: relative;
+    z-index: 2
+}
+
+.Image {
+    position: relative;
+    padding-top: 143.33333333333334%;
+    overflow: hidden
+}
+
+.TagFavorite .Image img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px 3px 0 0
+}
