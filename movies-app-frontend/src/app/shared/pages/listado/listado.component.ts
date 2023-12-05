@@ -17,6 +17,11 @@ export class ListadoComponent {
   constructor(private moviesService: MoviesService, private authService: AuthService){  }
 
   ngOnInit(): void {
+
+    if(!localStorage.getItem(`favorites_${this.authService.auth.id}`) && this.authService.auth.id != undefined){
+      localStorage.setItem(`favorites_${this.authService.auth.id}`, '[]');
+    }
+
     this.moviesService.getMovies()
         .subscribe(movies => this.movies = movies);
     this.moviesService.loadFavorites(this.authService.auth.id);
