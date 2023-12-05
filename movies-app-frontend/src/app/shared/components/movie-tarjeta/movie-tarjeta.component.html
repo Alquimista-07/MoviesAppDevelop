@@ -6,7 +6,7 @@
         </mat-card-title>
     </mat-card-header>
 
-    <img mat-card-image [src]="movie | imagen">
+    <img mat-card-image [src]="movie | imagen" [routerLink]="[(auth.usuario != null ? '/movies' : '/home'), movie.id]" style="cursor: pointer">
 
     <mat-card-content>
         <h3>{{ "Information" }}</h3>
