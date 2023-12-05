@@ -23,7 +23,6 @@ export class FavoritesComponent {
   
   validaFavoritos(){
     this.noFavorites = this.moviesService.noHayFavorito();
-    console.log(this.noFavorites);
   }
 
 }
