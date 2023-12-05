@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Movie } from '../../interfaces/movies.interface';
 import { MoviesService } from '../../../movies/services/movies.service';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-movie',
@@ -17,8 +18,12 @@ import { MoviesService } from '../../../movies/services/movies.service';
 export class MovieComponent implements OnInit {
 
   movie!: Movie;
+  isFavorite!: boolean;
 
-  constructor( private activatedRoute: ActivatedRoute, private moviesService: MoviesService, private router: Router ){}
+  constructor( private activatedRoute: ActivatedRoute, 
+               private moviesService: MoviesService, 
+              private router: Router,
+              private authService: AuthService ){ }
 
   ngOnInit(): void {
     // Obtener id
@@ -26,7 +31,14 @@ export class MovieComponent implements OnInit {
         .pipe(
           switchMap( ({id}) => this.moviesService.getMovieById(id) )
         )
-        .subscribe( movie => this.movie = movie );
+        .subscribe( movie => {
+          this.movie = movie
+          this.validaFavorito(this.movie.id);
+        } );
+  }
+
+  get auth() {
+    return this.authService.auth;
   }
 
   volver() {
@@ -36,6 +48,21 @@ export class MovieComponent implements OnInit {
     else{
       this.router.navigate(['/home/list']);
     }
+  }
+
+  addFavorite(movieId: string){
+    this.moviesService.addFavorite(movieId, this.authService.auth.id);
+    this.router.navigateByUrl('/movies/favorites');
+  }
+
+  removeFavorite(idFavorite: string, userId: string){
+    this.moviesService.removeFavorite(idFavorite, userId);
+    this.router.navigateByUrl('/movies/list');
+  }
+
+  validaFavorito(idFavorito: string){
+    this.isFavorite = false;
+    this.isFavorite = this.moviesService.validarFavorito(idFavorito);
   }
 
 }

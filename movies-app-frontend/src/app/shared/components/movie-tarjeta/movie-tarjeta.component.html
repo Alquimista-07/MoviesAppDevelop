@@ -29,22 +29,6 @@
             Watch Info...
         </button>
 
-        <button *ngIf="auth.usuario != null && movie.isFavorite != true"
-                mat-button 
-                color="info"
-                (click)="addFavorite(movie)">
-                Add Favorite
-                <mat-icon>favorite</mat-icon>
-        </button>
-
-        <button *ngIf="auth.usuario != null && movie.isFavorite == true"
-                mat-button 
-                color="info"
-                (click)="removeFavorite(movie.id)">
-                Remove Favorite
-                <mat-icon>clear</mat-icon>
-        </button>
-
     </mat-card-actions>
 
 </mat-card>

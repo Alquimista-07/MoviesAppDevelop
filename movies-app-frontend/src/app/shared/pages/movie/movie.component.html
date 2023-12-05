@@ -57,12 +57,29 @@
                     </button>
                 </span>
             </mat-list>
-             <br>
-             <button mat-button 
-                     color="warn" 
-                     (click)="volver()">
-                 Regresar
-             </button>
+            
+            <br>
+            <button mat-button 
+                    color="warn" 
+                    (click)="volver()">
+                Regresar
+            </button>
+
+            <button *ngIf="auth.usuario != null && isFavorite != true"
+                    mat-button 
+                    color="info"
+                    (click)="addFavorite(movie.id)">
+                    Add Favorite
+                    <mat-icon>favorite</mat-icon>
+            </button>
+
+            <button *ngIf="auth.usuario != null && isFavorite != false"
+                    mat-button 
+                    color="info"
+                    (click)="removeFavorite(movie.id, auth.id)">
+                    Remove Favorite
+                    <mat-icon>clear</mat-icon>
+            </button>
              <br>
              <br>
 

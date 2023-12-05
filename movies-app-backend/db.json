@@ -26,7 +26,7 @@
             "imageUrl": "../../assets/images/tenet.png"
         },
         {
-            "id" : "spiderMan",
+            "id" : "spiderman",
             "title": "Spider-Man: Into the Spider-Verse",
             "description": "Teen Miles Morales becomes the Spider-Man of his universe, and must join with five spider-powered individuals from other dimensions to stop a threat for all realities.",
             "rating": 8.4,
@@ -45,7 +45,7 @@
             "imageUrl": "../../assets/images/spiderMan.png"
         },
         {
-            "id" : "knivesOut",
+            "id" : "knivesout",
             "title": "Knives Out",
             "description": "A detective investigates the death of a patriarch of an eccentric, combative family.",
             "rating": 7.9,
@@ -64,7 +64,7 @@
             "imageUrl": "../../assets/images/knivesOut.png"
         },
         {
-            "id" : "guardiansOfTheGalaxy",
+            "id" : "guardiansofthegalaxy",
             "title": "Guardians of the Galaxy",
             "description": " A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.",
             "rating": 8,

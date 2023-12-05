@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Movie } from '../../interfaces/movies.interface';
 import { MoviesService } from '../../../movies/services/movies.service';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-listado',
@@ -13,11 +14,12 @@ export class ListadoComponent {
 
   selected = '';
 
-  constructor(private moviesService: MoviesService){ }
+  constructor(private moviesService: MoviesService, private authService: AuthService){  }
 
   ngOnInit(): void {
     this.moviesService.getMovies()
         .subscribe(movies => this.movies = movies);
+    this.moviesService.loadFavorites(this.authService.auth.id);
   }
 
   ordenar(selected: string){

@@ -19,37 +19,10 @@ export class MovieTarjetaComponent {
   @Input() movie!: Movie;
   _favorites: Movie[] = [];
 
-  constructor(private moviesService: MoviesService, private authService: AuthService, private router: Router){ }
+  constructor( private authService: AuthService ){ }
 
   get auth() {
     return this.authService.auth;
-  }
-
-  addFavorite(movie: Movie){
-
-    let isFavorite = { isFavorite: true };
-    let newMovie = { ...movie, ...isFavorite };
-
-    this.moviesService.addFavorite(newMovie);
-    Swal.fire({
-      title: "Well done",
-      text: "The movie has been added to your favorites list.",
-      icon: "success"
-    });
-  }
-
-  removeFavorite(idFavorite: string){
-
-    let hayValores = localStorage.getItem("favorites")
-    this._favorites = JSON.parse( localStorage.getItem( 'favorites' )! );
-    
-    if(hayValores){
-      const resultado = this._favorites.filter(favorite => favorite.id != idFavorite);
-      localStorage.setItem("favorites",JSON.stringify(resultado));
-    }
-
-    this.router.navigateByUrl('movies/list');
-
   }
 
 }
