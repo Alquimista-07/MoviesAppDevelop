@@ -4,6 +4,11 @@
           "id": 1,
           "usuario": "John Doe",
           "email": "john.doe@gmail.com"
+        },
+        {
+          "id": 2,
+          "usuario": "Jack Frost",
+          "email": "jack.frost@gmail.com"
         }
       ],
     "movies": [
