@@ -21,10 +21,6 @@ const routes: Routes = [
         component: BuscarComponent
       },
       {
-        path: 'list',
-        component: ListadoComponent
-      },
-      {
         path: ':id',
         component: MovieComponent
       },
