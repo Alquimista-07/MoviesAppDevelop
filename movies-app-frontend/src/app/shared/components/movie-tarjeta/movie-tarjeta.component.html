@@ -6,7 +6,14 @@
         </mat-card-title>
     </mat-card-header>
 
-    <img mat-card-image [src]="movie | imagen" [routerLink]="[(auth.usuario != null ? '/movies' : '/home'), movie.id]" style="cursor: pointer">
+    <article class="TagFavorite">
+        <a>
+            <span *ngIf="isFavorite" class="Favorite"><span>Favorite</span></span>
+            <div class="Image">
+                <img mat-card-image [src]="movie | imagen" [routerLink]="[(auth.usuario != null ? '/movies' : '/home'), movie.id]" style="cursor: pointer">
+            </div>
+        </a>
+    </article>
 
     <mat-card-content>
         <h3>{{ "Information" }}</h3>
