@@ -3,7 +3,7 @@
 Ejecutar los siguientes comandos:
 
 ```
-npm install
+npm install -g json-server
 ```
 
 ```
