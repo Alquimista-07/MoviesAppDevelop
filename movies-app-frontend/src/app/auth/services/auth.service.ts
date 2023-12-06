@@ -12,6 +12,7 @@ export class AuthService {
 
   private baseUrl: string = environment.baseUrl;
   private _auth: Auth | undefined;
+  private userId: string = '';
 
   get auth(): Auth {
     return { ...this._auth! };
@@ -21,36 +22,38 @@ export class AuthService {
     return JSON.parse(sessionStorage.getItem('user')!);
   }
 
-  constructor( private http: HttpClient ) { }
+  constructor(private http: HttpClient) { }
 
   verificaAutenticacion(): Observable<boolean> {
 
-    if( !localStorage.getItem( 'token' ) ) {
+    if (!localStorage.getItem('token')) {
       return of(false);
     }
 
-    const url = `${ this.baseUrl }/users/1`;
+    this.userId = JSON.parse(localStorage.getItem('token')!);
 
-    return this.http.get<Auth>( url )
-                .pipe(
-                  map( auth => {
-                    this._auth = auth;
-                    return true;
-                  })
-                );
+    const url = `${this.baseUrl}/users/${this.userId}`;
+
+    return this.http.get<Auth>(url)
+      .pipe(
+        map(auth => {
+          this._auth = auth;
+          return true;
+        })
+      );
 
   }
 
-  login() {
-    const url = `${ this.baseUrl }/users/1`;
-    return this.http.get<Auth>( url )
-               .pipe(
-                 tap( auth => this._auth = auth ),
-                 tap( auth => {
-                  localStorage.setItem( 'token', auth.id )
-                  sessionStorage.setItem('user', JSON.stringify( auth ))
-                 })
-               );
+  login(userId: string) {
+    const url = `${this.baseUrl}/users/${userId}`;
+    return this.http.get<Auth>(url)
+      .pipe(
+        tap(auth => this._auth = auth),
+        tap(auth => {
+          localStorage.setItem('token', auth.id)
+          sessionStorage.setItem('user', JSON.stringify(auth))
+        })
+      );
   }
 
   logout() {
