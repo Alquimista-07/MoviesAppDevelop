@@ -109,7 +109,7 @@ export class MoviesService {
 
   validarFavorito(idFavorito: string): boolean{
     let val = JSON.parse(localStorage.getItem(`favorites_${this.authService.auth.id}`)!);
-    if(val != null){
+    if(val != null && this.authService.auth.id != undefined){
       return this._favoritesLocal.includes(idFavorito);
     }
     return false;
